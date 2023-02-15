@@ -19,6 +19,7 @@ export class AppComponent {
 
   onSubmit() {
     this.submitted = true;
+    //initialise the data passing in , else cause error
     this.formData.push({ name: this.user.name, age: this.user.age, occupation: this.user.occupation });
     this.user = {
       name: '',
