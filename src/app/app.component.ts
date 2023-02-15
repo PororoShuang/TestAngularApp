@@ -5,6 +5,25 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'testAngularApp';
+  user = {
+    name: '',
+    age: '',
+    occupation: '',
+  };
+
+  submitted = false;
+
+  formData: { name: string, age: string, occupation: string }[] = [];
+
+  onSubmit() {
+    this.submitted = true;
+    this.formData.push({ name: this.user.name, age: this.user.age, occupation: this.user.occupation });
+    this.user = {
+      name: '',
+      age: '',
+      occupation: '',
+    };
+  }
 }
